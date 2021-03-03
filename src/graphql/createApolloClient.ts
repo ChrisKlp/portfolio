@@ -13,10 +13,12 @@ const createApolloClient = () => {
 
   const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors) {
-      graphQLErrors.map(({ message }) => alert(`Graphql Error ${message}`));
+      graphQLErrors.map(({ message }) =>
+        console.error(`Graphql Error ${message}`)
+      );
     }
     if (networkError?.message) {
-      alert(`Network Error ${networkError.message}`);
+      console.error(`Network Error ${networkError.message}`);
     }
   });
 

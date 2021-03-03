@@ -28,7 +28,7 @@ const ImageWrapper = styled.a`
   overflow: hidden;
 `;
 
-const Image = styled.img`
+const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -91,7 +91,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, index }) => {
   return (
     <Wrapper key={index} index={index + 1}>
       <ImageWrapper href={data?.homepageUrl} target="_blank">
-        <Image src={src} alt={`${data?.name}`} />
+        <Img src={src} alt={`${data?.name}`} />
       </ImageWrapper>
       <Content>
         <Title>{data?.description}</Title>

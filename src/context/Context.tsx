@@ -13,9 +13,9 @@ const filterList = [
   'redux',
   'redux-thunk',
   'api',
+  'apollo-client',
   'graphql',
   'gatsby',
-  'react-query',
   'leaflet-map',
 ];
 

@@ -8,7 +8,7 @@ const CircleBg = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 200vh;
+  height: 100%;
   background-image: url(${circleBg});
   background-repeat: no-repeat;
   background-position: calc(100% + 5.9rem) 4.5rem;
@@ -31,7 +31,7 @@ const Illustration = styled.div`
   top: 0;
   left: 50%;
   width: 50%;
-  min-height: 200vh;
+  height: 100%;
   background-image: url(${illustration});
   background-repeat: no-repeat;
   background-position: 5rem 10rem;

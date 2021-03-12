@@ -26,9 +26,7 @@ const Info = styled.p`
 `;
 
 const Projects: React.FC = () => {
-  const { data, loading, error } = useQuery<getRepositories>(GET_REPOSITORIES, {
-    pollInterval: 500,
-  });
+  const { data, loading, error } = useQuery<getRepositories>(GET_REPOSITORIES);
 
   const { filtredData } = useContext(Context);
 

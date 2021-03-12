@@ -2,9 +2,7 @@ import { createContext, useState } from 'react';
 import { getRepositories } from '../graphql/__generated__/getRepositories';
 
 const filterList = [
-  'html',
   'scss',
-  'javascript',
   'typescript',
   'react',
   'styled-components',
@@ -47,15 +45,16 @@ export const Provider: React.FC<ProviderProps> = ({ children }) => {
     );
 
   const filtredData = (queryData: getRepositories | undefined) => {
-    const notNewbieData = queryData?.user?.repositories.nodes!.filter(repo =>
-      repo?.repositoryTopics.nodes?.every(
-        topic => topic?.topic.name !== 'newbie'
-      )
+    const onlyPortfolioData = queryData?.user?.repositories.nodes!.filter(
+      repo =>
+        repo?.repositoryTopics.nodes
+          ?.map(topic => topic?.topic.name)
+          .includes('portfolio')
     );
 
     const activeFilters = filters.filter(({ active }) => active);
 
-    const data = notNewbieData?.filter(repo =>
+    const data = onlyPortfolioData?.filter(repo =>
       activeFilters.every(filter =>
         repo?.repositoryTopics.nodes
           ?.map(item => item?.topic.name)

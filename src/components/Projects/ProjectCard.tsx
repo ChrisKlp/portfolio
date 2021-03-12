@@ -96,13 +96,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, index }) => {
       <Content>
         <Title>{data?.description}</Title>
         <TagWrapper>
-          {data?.repositoryTopics.nodes?.map(topic => (
-            <li key={topic?.topic.name}>
-              <CardTag onClick={() => addFilter!(topic?.topic.name!)}>
-                {topic?.topic.name}
-              </CardTag>
-            </li>
-          ))}
+          {data?.repositoryTopics.nodes
+            ?.filter(topic => topic?.topic.name !== 'portfolio')
+            .map(topic => (
+              <li key={topic?.topic.name}>
+                <CardTag onClick={() => addFilter!(topic?.topic.name!)}>
+                  {topic?.topic.name}
+                </CardTag>
+              </li>
+            ))}
         </TagWrapper>
         <LinkWrapper>
           <Button href={data?.homepageUrl}>Live</Button>

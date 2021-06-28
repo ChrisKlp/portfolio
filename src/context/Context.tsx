@@ -2,19 +2,20 @@ import { createContext, useState } from 'react';
 import { getRepositories } from '../graphql/__generated__/getRepositories';
 
 const filterList = [
-  'scss',
   'typescript',
-  'react',
+  'scss',
   'styled-components',
+  'chakra-ui',
   'react-context',
   'react-router',
   'redux',
   'redux-thunk',
   'api',
   'apollo-client',
+  'react-query',
   'graphql',
   'gatsby',
-  'leaflet-map',
+  'nextjs',
 ];
 
 type ContextProps = {

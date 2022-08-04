@@ -69,7 +69,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ header }) => {
         </Icon>
       </li>
       <li>
-        <Icon href="https://github.com/CrisKLP" target="_blank">
+        <Icon href="https://github.com/ChrisKLP" target="_blank">
           <IconSVG src={githubIcon} description="Github profile" />
         </Icon>
       </li>
